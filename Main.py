@@ -33,3 +33,26 @@ def inorder(root) -> None:
     inorder(root.left_child)
     print(root.data, end = " ")
     inorder(root.right_child)
+
+
+def preorder(root) -> None:
+    if root is None:
+        return
+    print(root.data, end = " ")
+    preorder(root.left_child)
+    preorder(root.right_child)
+# Do not change the following code
+input_data = input()
+flag = True
+root = None
+for item in input_data.split(', '):
+    if flag is True:
+        root = insert(None, int(item))
+        flag = False
+    else:
+        insert(root, int(item))
+inorder(root)
+print()
+preorder(root)
+print()
+postorder(root)
